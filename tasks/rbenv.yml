@@ -13,7 +13,7 @@
     - zlib1g-dev
 
 - name: rbenv | update rbenv repo
-  git: repo=https://github.com/sstephenson/rbenv.git dest={{ rbenv_root }} version=v0.4.0
+  git: repo=https://github.com/rbenv/rbenv.git dest={{ rbenv_root }} version=v0.4.0
 
 - name: rbenv | add rbenv initialization to profile
   sudo: yes
@@ -30,5 +30,5 @@
   when: rbuild_present|failed
 
 - name: rbenv | clone ruby-build repo
-  git: repo=https://github.com/sstephenson/ruby-build.git dest={{ rbenv_root }}/plugins/ruby-build
+  git: repo=https://github.com/rbenv/ruby-build.git dest={{ rbenv_root }}/plugins/ruby-build
   when: rbuild_present|failed
